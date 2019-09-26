@@ -4,7 +4,7 @@ header("Content-Type: application/json; charset=UTF-8");
 
 require_once("./resources/config.php");
 
-$result = pg_query($dbconn, "SELECT owners.name, owners.id, COUNT(owner_name) FROM pets JOIN owners
+$result = pg_query($dbconn, "SELECT owners.name, owners.id, COUNT(owner_name) FROM pets RIGHT JOIN owners
     ON owners.id = pets.owner_name GROUP BY owners.id");
 
 $response = [];
