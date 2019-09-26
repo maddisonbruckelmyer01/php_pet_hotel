@@ -1,7 +1,7 @@
 <?php 
 require_once("./resources/config.php");
 
-$result = pg_query($dbconn, "SELECT * FROM pets JOIN owners ON pets.owner_name = owners.id;");
+$result = pg_query($dbconn, "SELECT * FROM owners");
 
 $i = pg_num_rows($result);
 
