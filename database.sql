@@ -44,3 +44,9 @@ FROM "owners"
 	JOIN "pets" ON "owners".id = "pets".owner_name
 GROUP BY "pets".id, "owners".name;
 --GETS THE PET SAGA 
+
+DELETE FROM "pets" WHERE "pets".id = $1;
+-- DELETES A PET FROM PETS TABLE -- 
+
+DELETE FROM "owners" WHERE "owners".id = $1;
+-- DELETES AN OWNER ONLY IF ALL OF THEIR PETS ARE ALSO DELETED FROM THE DATABASE -- 
